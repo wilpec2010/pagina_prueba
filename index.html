@@ -3,94 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web Proyecto</title>
+    <title>Mi Primera Página Web Proyecto Ambiental - Edición Azul</title>
     <style>
+        /* Estilos generales */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background-color: #f0f7ff; /* Azul muy claro de fondo */
+            color: #333;
             line-height: 1.6;
-            color: #333;
         }
+
+        /* 
+            Estilos para la fuente, margen y padding
+            para que la página sea responsive
+        */
+
+        /* Encabezado */
         header {
-            background-color: #4CAF50;
+            background-color: #005f99; /* Azul oscuro principal */
             color: white;
-            padding: 20px;
             text-align: center;
-            margin-bottom: 20px;
+            padding: 25px 20px;
+            margin-bottom: 25px;
         }
-        nav {
-            background-color: #f1f1f1;
-            padding: 10px;
-            margin-bottom: 20px;
+        header h1 {
+            margin: 0;
+            font-size: 2em;
         }
-        nav a {
-            margin-right: 15px;
-            text-decoration: none;
-            color: #333;
+
+        /* Pestañas redondeadas */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            padding: 0;
+            list-style: none;
         }
+
+        .tab {
+            background-color: #007bff; /* Azul primario */
+            color: white;
+            border-radius: 8px 8px 0 0;
+            padding: 12px 25px;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .tab:hover {
+            background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+        }
+
+        /* Contenido principal */
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto 30px auto;
+            padding: 25px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
         }
-        footer {
-            text-align: center;
+
+        /* Sección de datos de sensores */
+        .sensor-data {
             margin-top: 30px;
-            padding: 10px;
-            background-color: #f1f1f1;
+            padding-top: 20px;
+            border-top: 1px solid #dee2e6; /* Línea divisoria sutil */
+        }
+
+        .sensor-data h2 {
+            color: #005f99; /* Azul oscuro para títulos de sección */
+            margin-bottom: 15px;
+        }
+
+        .graph-placeholder {
+            background-color: #e9ecef; /* Gris claro para el placeholder */
+            border: 1px dashed #adb5bd; /* Borde discontinuo */
+            padding: 50px 20px;
+            text-align: center;
+            color: #495057; /* Color de texto del placeholder */
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* Tabla de flores */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6; /* Borde más sutil */
+        }
+
+        th {
+            background-color: #007bff; /* Azul primario */
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa; /* Rayado sutil para filas pares */
+        }
+
+        tr:hover {
+            background-color: #e9ecef; /* Color de fondo al pasar el mouse */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #004c7a; /* Azul aún más oscuro para el footer */
+            color: #f8f9fa; /* Texto claro para el footer */
+            text-align: center;
+            padding: 25px 20px;
+            margin-top: 30px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 10px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .social-icons a {
+            color: #f8f9fa;
+            font-size: 1.1em; /* Tamaño de texto en lugar de emojis */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #85c1e9; /* Azul claro al pasar el mouse */
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Bienvenido a Mi Página Web</h1>
-        <p>Una página HTML básica de ejemplo</p>
+        <h1>Proyecto Ambiental Inteligente</h1>
     </header>
     
-    <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Acerca de</a>
-        <a href="#">Servicios</a>
-        <a href="#">Contacto</a>
-    </nav>
+    <div class="tabs">
+        <div class="tab">Inicio</div>
+        <div class="tab">Galería</div>
+        <div class="tab">Proyectos</div>
+        <div class="tab">Datos Sensores</div>
+        <div class="tab">Contacto</div>
+    </div>
     
     <div class="container">
-        <h2>Sección Principal</h2>
-        <p>Esta es una página web básica creada con HTML y CSS. Se incluyen elementos comunes como encabezados, navegación, contenido principal y pie de página.</p>
+        <h2>Catálogo de Flora Local</h2>
+        <p>Explora información detallada sobre diversas especies de flores relevantes para nuestro ecosistema.</p>
         
-        <h3>Características de esta página:</h3>
-        <ul>
-            <li>Estructura HTML5 semántica</li>
-            <li>Estilos CSS básicos</li>
-            <li>Diseño responsivo</li>
-            <li>Navegación simple</li>
-        </ul>
-        
-        <h3>Un ejemplo de tabla:</h3>
-        <table border="1" style="width: 100%; border-collapse: collapse;">
-            <tr>
-                <th style="padding: 8px; text-align: left;">Nombre</th>
-                <th style="padding: 8px; text-align: left;">Edad</th>
-                <th style="padding: 8px; text-align: left;">País</th>
-            </tr>
-            <tr>
-                <td style="padding: 8px;">Juan Pérez</td>
-                <td style="padding: 8px;">28</td>
-                <td style="padding: 8px;">Colombia</td>
-            </tr>
-            <tr>
-                <td style="padding: 8px;">María López</td>
-                <td style="padding: 8px;">32</td>
-                <td style="padding: 8px;">México</td>
-            </tr>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre Común</th>
+                    <th>Nombre Científico</th>
+                    <th>Color Principal</th>
+                    <th>Hábitat Preferido</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Rosa Azul</td>
+                    <td>Rosa 'Azul Profundo'</td>
+                    <td>Azul</td>
+                    <td>Jardines controlados</td>
+                </tr>
+                <tr>
+                    <td>Girasol Miniatura</td>
+                    <td>Helianthus 'Sol Pequeño'</td>
+                    <td>Amarillo</td>
+                    <td>Macetas, bordes</td>
+                </tr>
+                <tr>
+                    <td>Lavanda</td>
+                    <td>Lavandula angustifolia</td>
+                    <td>Púrpura azulado</td>
+                    <td>Campos soleados, secos</td>
+                </tr>
+                <tr>
+                    <td>No me olvides</td>
+                    <td>Myosotis sylvatica</td>
+                    <td>Azul cielo</td>
+                    <td>Bosques húmedos, riberas</td>
+                </tr>
+                <tr>
+                    <td>Lirio Azul</td>
+                    <td>Iris sibirica</td>
+                    <td>Azul violeta</td>
+                    <td>Zonas húmedas, praderas</td>
+                </tr>
+            </tbody>
         </table>
+
+        <section class="sensor-data">
+            <h2>Visualización de Datos Ambientales</h2>
+            <p>Monitoreo en tiempo real de las condiciones ambientales a través de nuestros sensores.</p>
+            <div class="graph-placeholder">
+                Aquí se mostrará el gráfico de Temperatura (°C)
+            </div>
+            <div class="graph-placeholder">
+                Aquí se mostrará el gráfico de Humedad (%)
+            </div>
+            <div class="graph-placeholder">
+                Aquí se mostrará el gráfico de Calidad del Aire (AQI)
+            </div>
+        </section>
     </div>
     
     <footer>
-        <p>&copy; 2025 Mi Página Web Básica. Todos los derechos reservados por wilson perez.</p>
+        <p> 2025 Proyecto Ambiental Inteligente. Todos los derechos reservados.</p>
+        <div class="social-icons">
+            <a href="#" title="Facebook">Facebook</a>
+            <a href="#" title="Instagram">Instagram</a>
+            <a href="#" title="Twitter">Twitter</a>
+        </div>
     </footer>
 </body>
 </html>
